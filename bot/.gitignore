@@ -1,0 +1,5 @@
+configuration.yaml
+test*.py
+Pipfile
+Pipfile.lock
+ideas.txt
