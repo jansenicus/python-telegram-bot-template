@@ -10,7 +10,7 @@ Modular customizable `python-telegram-bot` template to speed-up development proc
 
 - ### _Automated help text_ based on `docstring`
 
-- ### _Simply and sophistication met in one directory to organize all command handlers_
+- ### _Simplicity and sophistication met in `handlers` directory_
 
 - ### _Ready to deploy_ as a docker container
 
