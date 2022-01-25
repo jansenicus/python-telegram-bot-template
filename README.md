@@ -52,3 +52,20 @@ dev:
     description:
       "This is a description of what my development bot can do with testing"
 ```
+
+## Run locally
+Enter into `python-telegram-bot-template\bot` directory
+```bash
+python main.py
+```
+
+## Run through docker container
+Enter into `python-telegram-bot-template` directory
+```
+docker-compose up --build
+```
+or
+```bash
+chmod +x build-docker.sh
+./build-docker.sh
+```
