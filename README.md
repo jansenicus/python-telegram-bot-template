@@ -21,7 +21,7 @@ Customizable `python-telegram-bot` template implementing code refactoring to str
 
 ## Clone this repository
 ```bash
-git clone [this repository]
+git clone https://github.com/jansenicus/python-telegram-bot-template
 cd bot
 pipenv install -r requirements.txt
 ```
