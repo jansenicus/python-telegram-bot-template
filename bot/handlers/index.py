@@ -12,7 +12,7 @@ from .help import help_command
 from .hello import hello
 from .whoami import whoami
 
-index_items = {
+command_map = {
     'start': start,
     'echo' : echo,
     # ....
@@ -29,4 +29,4 @@ def index():
     """
     
     """
-    return index_items
+    return command_map
