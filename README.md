@@ -99,18 +99,17 @@ docker-compose up --build
   - one bot will be used for development 
   - another bot for production
   
-  ## 2. Clone This Repository and Install Requirements 
+  ## 2. Clone This Repository
   ```bash
 
     git clone https://github.com/jansenicus/python-telegram-bot-template
-    cd bot
-    pipenv install -r requirements.txt
-    pipenv shell
+
 
   ```
   ## 3. Edit configuration file
-  - edit `configuration-sample.yaml` accordingly
+  - edit `configuration-sample.yaml` and save it as `configuration.yaml`
    ```yaml
+mode: prod
 prod:
   - botname: My Production Bot
     username: my_production_bot
@@ -120,21 +119,53 @@ prod:
       "this is some short text about my bot"
     description:
       "This is a description of what my bot can do which customer will use"
-```
-  - save the edit and rename it as `configuration.yaml`
 
-  ## 4. Run in local machine
-  Make sure you are in the `bot` directory to run
+```
+
+  ## 4. Run Directly in local machine
+
+  Make sure you are in the `bot` directory to install all the requirements and then run the telegram bot
   ```bash
 
-    python main.py
+    cd bot
+    pipenv install -r requirements.txt
+    pipenv run python main.py
 
   ```
 
-  ## 5. Build and Run as a container
+  ## 5. Build and Run Docker container as a Service
+  ### Build Docker container
+  ```bash
+
+      docker build -t python-telegram-bot -f Dockerfile .
+
+  ```
+
+  ### Run Docker container as a Service
+  ```bash
+
+      docker run -it --workdir /home python-telegram-bot pipenv run python main.py
+
+  ```
+  ### Build and run in one go
+  You could also build and run in one go for the first time
+  ```bash
+
+      docker-compose up -d
+
+  ```
+  or you could also force build every you want to apply change into the image
   ```bash
 
       docker-compose up -d --build
 
   ```
 
+# Command Handlers for Further Development
+All command handlers are put in one directory `handlers` and registered in one file `index.py`. The result is a convenient way to import all command handlers in one `import` call:
+
+```
+from handlers.index import index
+```
+
+[Read More...](bot/handlers/README.md)
